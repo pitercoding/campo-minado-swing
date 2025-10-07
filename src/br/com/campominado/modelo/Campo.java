@@ -64,13 +64,12 @@ public class Campo {
     boolean abrir() {
 
         if(!aberto && !marcado) {
-
             if(minado) {
                 notificarObservadores(CampoEvento.EXPLODIR);
                 return true;
             }
 
-            void setAberto(true);
+            setAberto(true);
 
             if(vizinhancaSegura()) {
                 vizinhos.forEach(v -> v.abrir());
